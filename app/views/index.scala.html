@@ -1,0 +1,10 @@
+@(title: String)(implicit req: RequestHeader)
+
+
+@react(title, "index") {
+@helper.javascriptRouter("jsRoutes")(
+  routes.javascript.Phrase.list
+)
+    <div id="mount"></div>
+
+}

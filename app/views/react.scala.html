@@ -1,0 +1,19 @@
+@(title: String, requireJsModule: String)(content: Html)
+
+
+@helper.requireJs(core = routes.Assets.versioned("lib/requirejs/require.js").url,
+                  module = routes.Assets.versioned(s"js/$requireJsModule").url)
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+    </head>
+
+    <body>
+        @content
+    </body>
+</html>
